@@ -1,7 +1,7 @@
 // Write your code here
 import './index.css'
 
-TodoItem = props => {
+const TodoItem = props => {
   const {todoDetails, deleteUser} = props
   const {id, title} = todoDetails
 

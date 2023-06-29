@@ -47,8 +47,8 @@ class SimpleTodos extends Component {
     deleteUser = (id) => {
         const {todoList} = this.state 
         const filteredTodoList = todoList.filter(eachTodo => 
-            eachTodo.id !== id) 
-        this.setState(todoList:filteredTodoList) 
+            eachTodo.id !== id)
+        this.setState({todoList:filteredTodoList}) 
     }
     render() {
         const {todoList} = this.state 
