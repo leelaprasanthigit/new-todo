@@ -34,37 +34,38 @@ const initialTodosList = [
 ]
 
 // Write your code here
-import './index.css' 
+import './index.css'
 
-import {Component} from 'react' 
+import {Component} from 'react'
 
-import TodoItem from './components/TodoItem' 
-
+import TodoItem from './components/TodoItem'
 
 class SimpleTodos extends Component {
-    state = {todoList:initialTodosList} 
+  state = {todoList: initialTodosList}
 
-    deleteUser = (id) => {
-        const {todoList} = this.state 
-        const filteredTodoList = todoList.filter(eachTodo => 
-            eachTodo.id !== id)
-        this.setState({todoList:filteredTodoList}) 
-    }
-    render() {
-        const {todoList} = this.state 
-        return (
-            <div className="bg-container">
-                <div className="todoContainer">
-                    <h1 className="heading"> Simple Todos </h1> 
-                    <ul>
-                        {todoList.map(todo) => (
-                            <TodoItem todoDetails={todo} key={todo.id} deleteUser={this.deleteUser}/>
-                        )}
-                    </ul>
-                </div>
-            </div>
-        )
-    }
+  deleteUser = id => {
+    const {todoList} = this.state
+    const filteredTodoList = todoList.filter(eachTodo => eachTodo.id !== id)
+    this.setState({todoList: filteredTodoList})
+  }
+  render() {
+    const {todoList} = this.state
+    return (
+      <div className="bg-container">
+        <div className="todoContainer">
+          <h1 className="heading"> Simple Todos </h1>
+          <ul>
+            {todoList.map(todo => (
+              <TodoItem
+                todoDetails={todo}
+                key={todo.id}
+                deleteUser={this.deleteUser}
+              />
+            ))}
+          </ul>
+        </div>
+      </div>
+    )
 }
 
-export default SimpleTodos;
+export default SimpleTodos
